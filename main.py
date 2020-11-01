@@ -6,5 +6,13 @@ conta_1.deposita(100)
 conta_2 = ContaCorrente(14)
 conta_2.deposita(200)
 
-contas = [conta_1, conta_2, conta_1]
-print(conta_1)
+# Se há necessidade de usar uma estrutura em que as posições
+# são mais importantes, é nessário trabalhar com outro tipo de dado.
+# Tupla
+# OBS: Tuplas são imutáveis
+# É possível apenas acessar seus valores
+# t[0]
+
+t = ("Roque", 30, 1990)
+
+print(t)
