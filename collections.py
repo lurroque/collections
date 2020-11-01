@@ -32,4 +32,3 @@ idades.extend([5, 10, 15])
 # Tudo que está antes do for,
 # é que será aplicado para cada item percorrido na lista
 idades_no_ano_que_vem = [idade + 1 for idade in idades if idade >= 21]
-print(idades_no_ano_que_vem)
