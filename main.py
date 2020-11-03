@@ -1,9 +1,9 @@
-from listas_objetos import ContaCorrente
+from exemplo_conta import Conta, ContaCorrente, ContaPoupanca
 
 # Um objeto só é instanciado se o seu construtor for chamado
-conta_1 = ContaCorrente(15)
+conta_1 = Conta(15)
 conta_1.deposita(100)
-conta_2 = ContaCorrente(14)
+conta_2 = Conta(14)
 conta_2.deposita(200)
 
 # Se há necessidade de usar uma estrutura em que as posições
@@ -29,6 +29,25 @@ def deposita(conta):
     return (codigo, novo_saldo)
 
 
-valor = deposita(conta_roque)
-print(conta_roque)
-print(valor)
+# valor = deposita(conta_roque)
+# print(conta_roque)
+# print(valor)
+
+
+# Polimorfismo, Herança e Duck typing
+conta_3 = ContaCorrente(3)
+conta_3.deposita(1000)
+conta_3.passa_o_mes()
+
+conta_4 = ContaPoupanca(4)
+conta_4.deposita(1000)
+conta_4.passa_o_mes()
+
+contas = [conta_3, conta_4]
+# Não importa se na lista exista uma conta corrente
+# ou uma conta poupança.
+# Interessa que elas tenha o método passa_o_mes,
+# essa característica é chamada de duck typing
+for conta in contas:
+    conta.passa_o_mes()
+    print(conta)
