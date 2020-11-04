@@ -32,3 +32,25 @@ idades.extend([5, 10, 15])
 # Tudo que está antes do for,
 # é que será aplicado para cada item percorrido na lista
 idades_no_ano_que_vem = [idade + 1 for idade in idades if idade >= 21]
+
+# Percorrendo a lista pela posição e valor
+for i in range(len(idades)):
+    print(i, idades[i])
+# ou
+print(list(enumerate(idades)))
+
+# Desempacotando(Unpacking) a tupla
+for indice, idade in enumerate(idades):
+    print(indice, "-", idade)
+
+usuarios = [
+    ("nome1", 33, 1988),
+    ("nome2", 32, 1989),
+    ("nome2", 31, 1990)
+]
+
+# Buscando um índice de uma tupla, percorrendo uma lista
+# Percorrer exatamente o número de elementos que aparecem
+# nas tuplas da lista
+for nome, idade, nascimento in usuarios:
+    print(nome, idade)
