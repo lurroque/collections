@@ -3,13 +3,10 @@ from exemplo_conta import (
     ContaCorrente,
     ContaPoupanca,
     ContaInvestimento,
+    ContaSalario
 )
 
 # Um objeto só é instanciado se o seu construtor for chamado
-conta_1 = Conta(15)
-conta_1.deposita(100)
-conta_2 = Conta(14)
-conta_2.deposita(200)
 
 # Se há necessidade de usar uma estrutura em que as posições
 # são mais importantes, é nessário trabalhar com outro tipo de dado.
@@ -57,4 +54,6 @@ for conta in contas:
     conta.passa_o_mes()
     print(conta)
 
-conta_5 = ContaInvestimento(99)
+conta_5 = ContaSalario(89)
+conta_6 = ContaSalario(89)
+print(conta_5 == conta_6)
