@@ -1,4 +1,9 @@
-from exemplo_conta import Conta, ContaCorrente, ContaPoupanca
+from exemplo_conta import (
+    Conta,
+    ContaCorrente,
+    ContaPoupanca,
+    ContaInvestimento,
+)
 
 # Um objeto só é instanciado se o seu construtor for chamado
 conta_1 = Conta(15)
@@ -51,3 +56,5 @@ contas = [conta_3, conta_4]
 for conta in contas:
     conta.passa_o_mes()
     print(conta)
+
+conta_5 = ContaInvestimento(99)

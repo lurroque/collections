@@ -1,4 +1,7 @@
-class Conta(object):
+from abc import ABCMeta, abstractmethod
+
+
+class Conta(metaclass=ABCMeta):
 
     def __init__(self, codigo,):
         self._codigo = codigo
@@ -9,6 +12,17 @@ class Conta(object):
 
     def __str__(self):
         return f">>Codigo: {self._codigo} | Saldo: {self._saldo}<<"
+
+    # Método abstrato
+    # As classes que herdarem da classe Conta,
+    # obrigatoriamente precisarão reescrever esse método
+    # Importar da classe abc, o ABCMeta e abstractmethod
+    # Se o método não for reescrito, ocorrerá um:
+    # TypeError: Can't instantiate abstract class Conta
+    # with abstract method passa_o_mes
+    @abstractmethod
+    def passa_o_mes(self):
+        pass
 
 
 class ContaCorrente(Conta):
@@ -22,3 +36,7 @@ class ContaPoupanca(Conta):
     def passa_o_mes(self):
         self._saldo *= 1.01
         self._saldo -= 3
+
+
+class ContaInvestimento(Conta):
+    pass
