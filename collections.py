@@ -54,3 +54,11 @@ usuarios = [
 # nas tuplas da lista
 for nome, idade, nascimento in usuarios:
     print(nome, idade)
+
+# Mais alguns tipos de geradores
+# Ordenação crescente e decrescente sem alterar a lista original
+print(idades)
+print(sorted(idades, reverse=True))
+
+# Ordenação alterando a lista original
+idades.sort()
