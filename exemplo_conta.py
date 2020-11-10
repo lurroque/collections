@@ -67,8 +67,14 @@ class ContaSalario(object):
             and self._saldo == outro_objeto._saldo
         )
 
+    # utilizando magic method __lt__ (less then)
+    # que permite que operadores de comparação
+    # sejam usados para comprar objetos (< > ==)
+    def __lt__(self, outro_objeto):
+        return self._saldo < outro_objeto._saldo
+
     def deposita(self, valor):
-        self.saldo += valor
+        self._saldo += valor
 
     def __str__(self):
         return f">>Codigo: {self._codigo} | Saldo: {self._saldo}<<"
