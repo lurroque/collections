@@ -68,11 +68,23 @@ usuarios = [
 idades.sort()
 
 # Ordenação de elementos sem ordem natural
+# 
+# Abordagem funcional
+#
 # É possível criar ordenação para objetos
 # através de atributos
 # método builtin da linguagem que extrai o valor
 # de um atributo:
 # attrgetter
+#
+# Abordagem orientada a objetos
+#
+# É possível definir que cada objeto
+# criado a partir do tipo conta
+# tenha o critério natural de ordenação,
+# utilizando magic method __lt__ (less then)
+# da linguagem
+
 conta1 = ContaSalario(17)
 conta1.deposita(500)
 
@@ -83,5 +95,9 @@ conta3 = ContaSalario(133)
 conta3.deposita(510)
 
 contas = [conta1, conta2, conta3]
-for conta in sorted(contas, key=attrgetter("_saldo")):
-    print(conta)
+# for conta in sorted(contas, key=attrgetter("_saldo")):
+#     print(conta)
+
+# for conta in sorted(contas, reverse=True):
+#     print(conta)
+print(conta1 == conta2)
